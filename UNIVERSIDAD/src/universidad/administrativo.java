@@ -7,7 +7,7 @@ package universidad;
 
 /**
  *
- * @author CBN
+ * @author Juan Jose Millan, Aylyn Meza,Cristopher Duarte
  */
 public class administrativo extends personal{
     protected String cargo, fechaCont;

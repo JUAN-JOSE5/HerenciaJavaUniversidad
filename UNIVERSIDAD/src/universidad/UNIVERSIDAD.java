@@ -5,9 +5,12 @@
  */
 package universidad;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
- * @author CBN
+ * @author Juan Jose Millan, Aylyn Meza,Cristopher Duarte
  */
 public class UNIVERSIDAD {
 
@@ -15,16 +18,66 @@ public class UNIVERSIDAD {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Alumnos a1, a2;
-        administrativo ad1;
-        planta p1;
-        a1= new Alumnos("TI", "1082874279", "Perez meza", "alejandro antonio", 17, true, "2019114002", "ingenieria", "sistemas", 2 );
-        a1= new Alumnos("CC", "1082545456", "rojas acuña", "MARIA CAMILA", 19, false, "2011454554", "social", "psicologo", 3 );
-        
+        Scanner leer = new Scanner (System.in);
+        ArrayList <Alumnos> listaalumnos = new ArrayList();
+        Alumnos alumno1;
+       int a,b;
+       boolean F =true;
+           do{
+       System.out.println("(1) Ingresar alumno"+"\n"+"(2) Eliminar alumno"+"\n"+"(3) Editar alumno"); 
+       a=leer.nextInt();
+        switch(a){
+            case 1:
                 
+                 String tipoDocumento,documento,Apellidos,nombres,codigo,facultad,programa;
+        int p,edad,semestre;
+        boolean activo;
+        boolean desicion=true;
+        while(desicion){
+        System.out.println("Ingrese el tipo de documento");
+        tipoDocumento=leer.next();
+            System.out.println("Documento");
+       documento=leer.next();
+            System.out.println("apellidos");
+            Apellidos=leer.next();
+            System.out.println("nombres");
+            nombres=leer.next();
+            System.out.println("edad");
+            edad=leer.nextInt();
+           System.out.println("activo");
+        activo=leer.nextBoolean();
+            System.out.println("codigo");
+         codigo=leer.next();
+         System.out.println("facultad");
+        facultad=leer.next();
+         System.out.println("programa");
+        programa=leer.next();
+         System.out.println("semestre");
+        semestre=leer.nextInt();
+            System.out.println("Desea cambiar/ingresar a alguien (1 si) (2 no)");
+            p=leer.nextInt();
+            if(p==2){
+                desicion = false;
+            }
+             alumno1= new Alumnos(tipoDocumento,documento,Apellidos,nombres,edad,activo,codigo,facultad,programa,semestre);
+            listaalumnos.add(alumno1);
+            
+
+            
+        }
+                break;
+            case 2:
+                for(int x=0;x<listaalumnos.size();x++){
+                    System.out.println(listaalumnos.get(x).mostrarInfoAlumnos());    
+                }
+                
+                break;
+        }
+        
+        }while(F!=false);
+     
                 
                 
     }
     
-}
+  }

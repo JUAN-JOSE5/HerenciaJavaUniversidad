@@ -7,7 +7,7 @@ package universidad;
 
 /**
  *
- * @author CBN
+ * @author Juan Jose Millan, Aylyn Meza,Cristopher Duarte
  */
 public class planta extends Docente{
     protected String fechaContrato;

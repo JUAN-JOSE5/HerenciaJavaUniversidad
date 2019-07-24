@@ -7,7 +7,7 @@ package universidad;
 
 /**
  *
- * @author CBN
+ * @author Juan Jose Millan, Aylyn Meza,Cristopher Duarte
  */
 public class Alumnos extends personal{
     protected String codigo, facultad, programa;
@@ -19,6 +19,17 @@ public class Alumnos extends personal{
         this.facultad = facultad;
         this.programa = programa;
         this.semestre = semestre;
+    }
+     public String mostrarInfoAlumnos(){
+        String resultado = "";
+        String estado = "";
+        if(this.activo){
+            estado = "activo";
+        }else{
+            estado = "inactivo";
+        }
+        resultado =mostrarInfo()+"\t"+codigo+"\t"+facultad+"\t"+programa+"\t"+Integer.toString(semestre);
+        return resultado;
     }
 
     
